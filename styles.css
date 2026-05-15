@@ -104,6 +104,13 @@ h1 {
   margin-top: 24px;
 }
 
+.store-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 12px;
+}
+
 .btn {
   display: inline-block;
   border-radius: 8px;
@@ -120,6 +127,12 @@ h1 {
 .btn-secondary {
   border: 1px solid var(--line);
   background: var(--surface);
+  color: var(--brand-strong);
+}
+
+.btn-store {
+  border: 1px solid var(--line);
+  background: #eef4fb;
   color: var(--brand-strong);
 }
 
@@ -216,6 +229,14 @@ h1 {
   display: inline-block;
   margin-top: 8px;
   font-weight: 700;
+}
+
+.app-links {
+  margin-top: 14px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  align-items: center;
 }
 
 .footer {
