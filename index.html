@@ -5,6 +5,35 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Windule | Window Cleaning Scheduling Software</title>
   <meta name="description" content="Windule helps window cleaning businesses schedule jobs, manage customers, send invoices, and keep teams organized.">
+  
+  <!-- SEO & Social Sharing Meta Tags -->
+  <meta property="og:title" content="Windule | Window Cleaning Scheduling Software">
+  <meta property="og:description" content="Windule helps window cleaning businesses schedule jobs, manage customers, send invoices, and keep teams organized.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://windule.com">
+  <meta property="og:image" content="https://windule.com/og-image.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Windule | Window Cleaning Scheduling Software">
+  <meta name="twitter:description" content="Windule helps window cleaning businesses schedule jobs, manage customers, send invoices, and keep teams organized.">
+
+  <!-- JSON-LD Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "Windule",
+    "operatingSystem": "iOS, Android",
+    "applicationCategory": "BusinessApplication",
+    "description": "Windule helps window cleaning businesses schedule jobs, manage customers, send invoices, and keep teams organized.",
+    "offers": {
+      "@type": "Offer",
+      "price": "0.00",
+      "priceCurrency": "USD"
+    }
+  }
+  </script>
+
+  <!-- Preconnects & Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -32,51 +61,193 @@
             Windule gives growing service companies one place for scheduling, routing, invoicing, and customer records.
           </p>
           <div class="cta-row">
-            <a class="btn btn-primary" href="#contact">Request Demo</a>
+            <button class="btn btn-primary open-demo-trigger">Request Demo</button>
             <a class="btn btn-secondary" href="#features">See Features</a>
           </div>
           <div class="store-links">
-            <a class="btn btn-store" href="https://apps.apple.com/in/app/windule-window-cleaning/id6757824315" target="_blank" rel="noopener noreferrer">Download on the App Store</a>
-            <a class="btn btn-store" href="https://play.google.com/store/apps/details?id=com.markduenas.windowschedule" target="_blank" rel="noopener noreferrer">Get it on Google Play</a>
+            <a class="btn btn-store" href="https://apps.apple.com/in/app/windule-window-cleaning/id6757824315" target="_blank" rel="noopener noreferrer">
+              <!-- App Store Icon -->
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M15.97 4.17c.66-.81 1.11-1.93.99-3.06-1 .04-2.19.67-2.9 1.49-.62.71-1.16 1.85-1.01 2.96 1.09.09 2.21-.57 2.92-1.39Z"/>
+              </svg>
+              Download on App Store
+            </a>
+            <a class="btn btn-store" href="https://play.google.com/store/apps/details?id=com.markduenas.windowschedule" target="_blank" rel="noopener noreferrer">
+              <!-- Google Play Icon -->
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                <path d="M3.609 1.814L13.783 12 3.61 22.186A2.22 2.22 0 0 1 3 20.59V3.41c0-.66.22-1.23.609-1.596zm11.237 9.14l2.965-2.964L4.996 2.378c-.286-.16-.607-.234-.913-.217L14.846 10.95zm.002 2.102l-10.76 8.572c.306.017.627-.057.913-.217l12.812-7.388-2.965-2.967zm1.056-.998l3.655-2.107a2.164 2.164 0 0 0 0-3.754l-3.655-2.107-3.1 3.1 3.1 3.1z"/>
+              </svg>
+              Get it on Google Play
+            </a>
           </div>
         </div>
-        <div class="panel">
-          <h2>Today at a Glance</h2>
-          <ul>
-            <li><span>Scheduled jobs</span><strong>18</strong></li>
-            <li><span>Invoices due</span><strong>7</strong></li>
-            <li><span>New customers</span><strong>4</strong></li>
-            <li><span>Team utilization</span><strong>91%</strong></li>
-          </ul>
+        
+        <!-- Interactive Scheduler Panel -->
+        <div class="panel dashboard-widget">
+          <div class="widget-header">
+            <h3>Today's Schedule</h3>
+            <div class="widget-tabs">
+              <button class="tab-btn active" id="tab-jobs" aria-selected="true">Jobs</button>
+              <button class="tab-btn" id="tab-metrics" aria-selected="false">Analytics</button>
+            </div>
+          </div>
+          
+          <div class="tab-content" id="content-jobs">
+            <div class="job-list">
+              <div class="job-item" data-id="1">
+                <div class="job-info">
+                  <span class="job-time">8:30 AM</span>
+                  <span class="job-name">Clearview Office Park</span>
+                  <span class="job-meta">Bi-weekly Exterior • $240</span>
+                </div>
+                <div class="job-actions">
+                  <select class="crew-select" aria-label="Assign crew">
+                    <option value="unassigned">Unassigned</option>
+                    <option value="crew-a" selected>Crew A</option>
+                    <option value="crew-b">Crew B</option>
+                  </select>
+                  <button class="status-btn status-completed" data-status="completed">Done</button>
+                </div>
+              </div>
+              
+              <div class="job-item" data-id="2">
+                <div class="job-info">
+                  <span class="job-time">11:00 AM</span>
+                  <span class="job-name">Miller Residence</span>
+                  <span class="job-meta">Interior/Exterior • $185</span>
+                </div>
+                <div class="job-actions">
+                  <select class="crew-select" aria-label="Assign crew">
+                    <option value="unassigned">Unassigned</option>
+                    <option value="crew-a">Crew A</option>
+                    <option value="crew-b" selected>Crew B</option>
+                  </select>
+                  <button class="status-btn status-pending" data-status="pending">Pending</button>
+                </div>
+              </div>
+
+              <div class="job-item" data-id="3">
+                <div class="job-info">
+                  <span class="job-time">2:15 PM</span>
+                  <span class="job-name">Starbucks Downtown</span>
+                  <span class="job-meta">Monthly Storefront • $95</span>
+                </div>
+                <div class="job-actions">
+                  <select class="crew-select" aria-label="Assign crew">
+                    <option value="unassigned" selected>Unassigned</option>
+                    <option value="crew-a">Crew A</option>
+                    <option value="crew-b">Crew B</option>
+                  </select>
+                  <button class="status-btn status-pending" data-status="pending">Pending</button>
+                </div>
+              </div>
+            </div>
+            
+            <div class="widget-footer">
+              <p class="widget-tip">💡 <em>Try assigning the unassigned job or toggling statuses to see real-time updates!</em></p>
+            </div>
+          </div>
+          
+          <div class="tab-content hidden" id="content-metrics">
+            <div class="metrics-grid">
+              <div class="metric-card">
+                <span class="metric-label">Completed Jobs</span>
+                <strong class="metric-value" id="stat-completed">1 / 3</strong>
+              </div>
+              <div class="metric-card">
+                <span class="metric-label">Total Revenue</span>
+                <strong class="metric-value" id="stat-revenue">$240</strong>
+              </div>
+              <div class="metric-card">
+                <span class="metric-label">Team Utilization</span>
+                <div class="progress-container">
+                  <div class="progress-bar-bg">
+                    <div class="progress-bar-fill" id="stat-utilization" style="width: 100%"></div>
+                  </div>
+                  <span class="progress-label">100% utilized</span>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </section>
 
-    <section id="features" class="section">
+    <section id="features" class="section reveal">
       <div class="container">
         <h2>Core Features</h2>
         <div class="cards">
           <article class="card">
+            <!-- Smart Scheduling Icon (Calendar) -->
+            <svg class="card-icon" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+              <line x1="16" y1="2" x2="16" y2="6"></line>
+              <line x1="8" y1="2" x2="8" y2="6"></line>
+              <line x1="3" y1="10" x2="21" y2="10"></line>
+              <path d="M8 14h.01"></path>
+              <path d="M12 14h.01"></path>
+              <path d="M16 14h.01"></path>
+              <path d="M8 18h.01"></path>
+              <path d="M12 18h.01"></path>
+              <path d="M16 18h.01"></path>
+            </svg>
             <h3>Smart Scheduling</h3>
             <p>Assign jobs quickly with a calendar designed for recurring service work.</p>
           </article>
+          
           <article class="card">
+            <!-- Customer Records Icon (Users) -->
+            <svg class="card-icon" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+              <circle cx="9" cy="7" r="4"></circle>
+              <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+              <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+            </svg>
             <h3>Customer Records</h3>
             <p>Keep notes, addresses, service history, and billing details in one place.</p>
           </article>
+          
           <article class="card">
+            <!-- Invoicing Icon (Receipt) -->
+            <svg class="card-icon" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path d="M4 2v20l2-1 2 1 2-1 2 1 2-1 2 1 2-1 2 1V2l-2 1-2-1-2 1-2-1-2 1-2-1-2 1-2-1z"></path>
+              <path d="M16 8h-6a2 2 0 1 0 0 4h4a2 2 0 1 1 0 4H8"></path>
+              <line x1="12" y1="6" x2="12" y2="18"></line>
+            </svg>
             <h3>Invoicing</h3>
             <p>Create professional invoices in minutes and track payment status instantly.</p>
           </article>
+          
           <article class="card">
+            <!-- Team Visibility Icon (Dashboard View) -->
+            <svg class="card-icon" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+              <line x1="9" y1="3" x2="9" y2="21"></line>
+              <line x1="9" y1="9" x2="21" y2="9"></line>
+              <line x1="9" y1="15" x2="21" y2="15"></line>
+            </svg>
             <h3>Team Visibility</h3>
             <p>See crew assignments, route details, and daily workload across your team.</p>
           </article>
+          
           <article class="card">
+            <!-- Map Routing Icon (Map) -->
+            <svg class="card-icon" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <polygon points="3 6 9 3 15 6 21 3 21 18 15 21 9 18 3 21"></polygon>
+              <line x1="9" y1="3" x2="9" y2="18"></line>
+              <line x1="15" y1="6" x2="15" y2="21"></line>
+            </svg>
             <h3>Map Routing</h3>
             <p>Plan efficient travel and reduce wasted drive time between appointments.</p>
           </article>
+          
           <article class="card">
+            <!-- Business Insights Icon (Rising Chart) -->
+            <svg class="card-icon" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <line x1="18" y1="20" x2="18" y2="10"></line>
+              <line x1="12" y1="20" x2="12" y2="4"></line>
+              <line x1="6" y1="20" x2="6" y2="14"></line>
+            </svg>
             <h3>Business Insights</h3>
             <p>Track performance trends to improve scheduling, margins, and retention.</p>
           </article>
@@ -84,7 +255,7 @@
       </div>
     </section>
 
-    <section id="why" class="section section-alt">
+    <section id="why" class="section section-alt reveal">
       <div class="container">
         <h2>Why Windule</h2>
         <div class="grid-3">
@@ -104,11 +275,15 @@
       </div>
     </section>
 
-    <section id="contact" class="section">
+    <section id="contact" class="section reveal">
       <div class="container contact">
-        <h2>Contact Windule</h2>
+        <h2>Ready to simplify your business?</h2>
+        <p>Talk with our specialists to see if Windule is the right fit for your team.</p>
+        <p style="margin-bottom: 24px;">
+          <button class="btn btn-primary open-demo-trigger">Request a Free Demo</button>
+        </p>
         <p>For product questions, partnerships, or onboarding support:</p>
-        <p><a href="mailto:support@windule.com">support@windule.com</a></p>
+        <p><a href="mailto:support@windule.com" class="email-link">support@windule.com</a></p>
         <p class="app-links">
           <a href="https://apps.apple.com/in/app/windule-window-cleaning/id6757824315" target="_blank" rel="noopener noreferrer">iOS App</a>
           <span aria-hidden="true">•</span>
@@ -124,8 +299,235 @@
     </div>
   </footer>
 
+  <!-- Interactive Demo Request Modal -->
+  <dialog id="demo-modal" class="modal" closedby="any" aria-labelledby="modal-title">
+    <div class="modal-header">
+      <h2 id="modal-title">Request a Windule Demo</h2>
+      <button class="modal-close" aria-label="Close modal">&times;</button>
+    </div>
+    
+    <form id="demo-form" class="modal-form">
+      <p class="form-lead">See how Windule can transform your window cleaning business. Fill out the form and our team will be in touch shortly.</p>
+      
+      <div class="form-group">
+        <label for="form-name">Your Name</label>
+        <input type="text" id="form-name" required placeholder="John Doe" autocomplete="name">
+      </div>
+      
+      <div class="form-group">
+        <label for="form-business">Business Name</label>
+        <input type="text" id="form-business" required placeholder="Sparkle Window Cleaning" autocomplete="organization">
+      </div>
+      
+      <div class="form-group">
+        <label for="form-email">Work Email</label>
+        <input type="email" id="form-email" required placeholder="john@sparkle.com" autocomplete="email">
+      </div>
+      
+      <div class="form-group">
+        <label for="form-phone">Phone Number</label>
+        <input type="tel" id="form-phone" placeholder="(555) 000-0000" autocomplete="tel">
+      </div>
+      
+      <div class="form-group">
+        <label for="form-crew">Crew Size</label>
+        <select id="form-crew" required>
+          <option value="" disabled selected>Select crew size...</option>
+          <option value="1">1 Crew (Solo)</option>
+          <option value="2-4">2 - 4 Crews</option>
+          <option value="5-10">5 - 10 Crews</option>
+          <option value="11+">11+ Crews</option>
+        </select>
+      </div>
+      
+      <button type="submit" class="btn btn-primary btn-block">Submit Demo Request</button>
+    </form>
+    
+    <div id="demo-success" class="modal-success hidden">
+      <div class="success-icon">
+        <svg fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+          <polyline points="22 4 12 14.01 9 11.01"></polyline>
+        </svg>
+      </div>
+      <h3>Request Sent!</h3>
+      <p>Thank you, <span id="user-first-name"></span>! We've received your request for <strong><span id="user-company-name"></span></strong>.</p>
+      <p>Our onboarding team will contact you at <strong><span id="user-email-addr"></span></strong> within the next 24 business hours to set up your demo.</p>
+      <button class="btn btn-secondary btn-block modal-close-success">Close</button>
+    </div>
+  </dialog>
+
   <script>
+    // Copyright Year
     document.getElementById("year").textContent = new Date().getFullYear();
+
+    // ----------------------------------------------------
+    // 1. Dashboard Widget Interaction
+    // ----------------------------------------------------
+    const tabJobs = document.getElementById('tab-jobs');
+    const tabMetrics = document.getElementById('tab-metrics');
+    const contentJobs = document.getElementById('content-jobs');
+    const contentMetrics = document.getElementById('content-metrics');
+    
+    tabJobs.addEventListener('click', () => {
+      tabJobs.classList.add('active');
+      tabJobs.setAttribute('aria-selected', 'true');
+      tabMetrics.classList.remove('active');
+      tabMetrics.setAttribute('aria-selected', 'false');
+      contentJobs.classList.remove('hidden');
+      contentMetrics.classList.add('hidden');
+    });
+    
+    tabMetrics.addEventListener('click', () => {
+      tabMetrics.classList.add('active');
+      tabMetrics.setAttribute('aria-selected', 'true');
+      tabJobs.classList.remove('active');
+      tabJobs.setAttribute('aria-selected', 'false');
+      contentJobs.classList.add('hidden');
+      contentMetrics.classList.remove('hidden');
+    });
+
+    // Dashboard Calculations
+    function updateDashboard() {
+      const jobs = document.querySelectorAll('.job-item');
+      let completedCount = 0;
+      let totalRevenue = 0;
+      let assignedCrews = new Set();
+      
+      jobs.forEach(job => {
+        const statusBtn = job.querySelector('.status-btn');
+        const isCompleted = statusBtn.getAttribute('data-status') === 'completed';
+        const crewSelect = job.querySelector('.crew-select');
+        const crewValue = crewSelect.value;
+        
+        if (isCompleted) {
+          completedCount++;
+          const metaText = job.querySelector('.job-meta').textContent;
+          const priceMatch = metaText.match(/\$(\d+)/);
+          if (priceMatch) {
+            totalRevenue += parseInt(priceMatch[1], 10);
+          }
+        }
+        
+        if (crewValue !== 'unassigned') {
+          assignedCrews.add(crewValue);
+        }
+      });
+      
+      // Update UI Elements
+      document.getElementById('stat-completed').textContent = `${completedCount} / ${jobs.length}`;
+      document.getElementById('stat-revenue').textContent = `$${totalRevenue}`;
+      
+      // We have 2 crew options (Crew A and Crew B)
+      const utilizationPercent = Math.round((assignedCrews.size / 2) * 100);
+      document.getElementById('stat-utilization').style.width = `${utilizationPercent}%`;
+      document.querySelector('.progress-label').textContent = `${utilizationPercent}% utilized`;
+    }
+
+    // Attach Dashboard Event Listeners
+    document.querySelector('.job-list').addEventListener('change', (e) => {
+      if (e.target.classList.contains('crew-select')) {
+        updateDashboard();
+      }
+    });
+    
+    document.querySelector('.job-list').addEventListener('click', (e) => {
+      if (e.target.classList.contains('status-btn')) {
+        const btn = e.target;
+        const currentStatus = btn.getAttribute('data-status');
+        if (currentStatus === 'pending') {
+          btn.setAttribute('data-status', 'completed');
+          btn.textContent = 'Done';
+          btn.className = 'status-btn status-completed';
+        } else {
+          btn.setAttribute('data-status', 'pending');
+          btn.textContent = 'Pending';
+          btn.className = 'status-btn status-pending';
+        }
+        updateDashboard();
+      }
+    });
+
+    // Run initial update
+    updateDashboard();
+
+    // ----------------------------------------------------
+    // 2. Demo Dialog Modal Management
+    // ----------------------------------------------------
+    const demoModal = document.getElementById('demo-modal');
+    const openDemoBtns = document.querySelectorAll('.open-demo-trigger');
+    const closeBtns = document.querySelectorAll('.modal-close, .modal-close-success');
+    const demoForm = document.getElementById('demo-form');
+    const demoSuccess = document.getElementById('demo-success');
+
+    openDemoBtns.forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        e.preventDefault();
+        demoForm.style.display = 'block';
+        demoSuccess.classList.add('hidden');
+        demoForm.reset();
+        demoModal.showModal();
+      });
+    });
+
+    closeBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        demoModal.close();
+      });
+    });
+
+    // Light dismiss fallback for browsers not supporting closedby="any"
+    if (!('closedBy' in HTMLDialogElement.prototype)) {
+      demoModal.addEventListener('click', (event) => {
+        if (event.target !== demoModal) return;
+        const rect = demoModal.getBoundingClientRect();
+        const isInside = (
+          rect.top <= event.clientY &&
+          event.clientY <= rect.top + rect.height &&
+          rect.left <= event.clientX &&
+          event.clientX <= rect.left + rect.width
+        );
+        if (!isInside) {
+          demoModal.close();
+        }
+      });
+    }
+
+    // Modal Form Submission
+    demoForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      
+      const name = document.getElementById('form-name').value;
+      const company = document.getElementById('form-business').value;
+      const email = document.getElementById('form-email').value;
+      
+      const firstName = name.split(' ')[0];
+      
+      document.getElementById('user-first-name').textContent = firstName;
+      document.getElementById('user-company-name').textContent = company;
+      document.getElementById('user-email-addr').textContent = email;
+      
+      demoForm.style.display = 'none';
+      demoSuccess.classList.remove('hidden');
+    });
+
+    // ----------------------------------------------------
+    // 3. Scroll Reveal Animations (Intersection Observer)
+    // ----------------------------------------------------
+    const revealElements = document.querySelectorAll('.reveal');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('active');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, {
+      threshold: 0.1,
+      rootMargin: "0px 0px -50px 0px"
+    });
+
+    revealElements.forEach(el => observer.observe(el));
   </script>
 </body>
 </html>
