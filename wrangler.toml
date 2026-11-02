@@ -1,5 +1,7 @@
 name = "windule-site"
 compatibility_date = "2026-05-14"
 
+# Upload only the public site. Anything else in the repo (.git, markdown,
+# this config, future notes) is never deployed.
 [assets]
-directory = "."
+directory = "./public"
