@@ -1,18 +1,14 @@
 # Windule Deployment and Email Forwarding
 
-## Deploy Site on Cloudflare Pages (Free)
+## Deploy Site on Cloudflare Workers Builds
 
-1. Create a GitHub repo for this folder and push:
-   - `index.html`
-   - `styles.css`
-2. In Cloudflare Dashboard, go to `Workers & Pages` > `Create application` > `Pages` > `Connect to Git`.
-3. Select the repo.
-4. Build settings:
-   - Framework preset: `None`
-   - Build command: leave empty
-   - Build output directory: `/`
-5. Deploy.
-6. Add your custom domain `windule.com` (and optionally `www.windule.com`) in the Pages project domain settings.
+Pushes to `main` deploy with Workers Builds. `wrangler.toml` sets `assets.directory = "./public"`, so only that folder is uploaded.
+
+Put files the live site should serve in `public/` (`index.html`, `styles.css`, and any images, icons, favicons, `robots.txt`, sitemap, or `.well-known` files the page or app links need). Leave repo and config files at the repository root — `.git`, markdown docs, and `wrangler.toml` are not part of the upload. A file committed outside `public/` is not served, including future notes.
+
+Do not point the asset directory back at the repository root. That publishes the whole checkout, including `.git` and docs.
+
+Custom domain: `windule.com` (and optionally `www.windule.com`) in the Worker domain settings.
 
 ## Set Up Email Forwarding for support@windule.com
 
